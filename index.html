@@ -19,7 +19,7 @@
       <a href="#about">About</a>
       <a href="#project">FYP</a>
       <a href="#contact">Contact</a>
-    </nav>sss
+    </nav>
   </header>
 
   <main>
@@ -75,30 +75,42 @@
       </div>
 
       <div class="project-card">
-        <h3>Project Title: Digital Transformation & Mathematics (DTM)</h3>
-        <p>DTM is an innovative approach that combines advanced mathematical algorithms with digital transformation principles to solve real-world business challenges. This project demonstrates how data-driven mathematics can optimize operations, improve decision-making, and accelerate digital growth across various industries.</p>
-        
-        <div class="project-details">
-          <div class="detail-box">
-            <h4>Key Features</h4>
-            <ul>
-              <li>Advanced data analytics using mathematical models</li>
-              <li>Predictive algorithms for business forecasting</li>
-              <li>Automated workflow optimization</li>
-              <li>Real-time performance monitoring & insights</li>
-            </ul>
+        <h3>Project Title: Differential Transformation Method (DTM)</h3>
+        <p>DTM (Differential Transformation Method) is a powerful mathematical technique used to solve complex differential equations and transform systems. It combines differential equations with advanced transformation methods to provide numerical and analytical solutions for real-world problems in engineering, physics, and business systems.</p>
+      </div>
+
+      <div class="applications-section">
+        <h3>DTM Applications & Use Cases</h3>
+        <div class="applications-grid">
+          <div class="app-card app-card-1">
+            <span class="app-number">01</span>
+            <h4>Engineering Design</h4>
+            <p>Solving differential equations for structural analysis, fluid dynamics, and mechanical systems optimization.</p>
           </div>
-          
-          <div class="detail-box">
-            <h4>Best For Industries</h4>
-            <ul>
-              <li><strong>E-Commerce:</strong> Inventory & demand forecasting</li>
-              <li><strong>Finance:</strong> Risk analysis & portfolio management</li>
-              <li><strong>Healthcare:</strong> Patient data analysis & predictions</li>
-              <li><strong>Manufacturing:</strong> Production optimization</li>
-              <li><strong>Retail:</strong> Customer behavior analytics</li>
-              <li><strong>Logistics:</strong> Route optimization & supply chain</li>
-            </ul>
+          <div class="app-card app-card-2">
+            <span class="app-number">02</span>
+            <h4>Physics & Science</h4>
+            <p>Analyzing oscillatory systems, wave propagation, and quantum mechanics problems using transformation methods.</p>
+          </div>
+          <div class="app-card app-card-3">
+            <span class="app-number">03</span>
+            <h4>Financial Modeling</h4>
+            <p>Predicting market trends, option pricing, and portfolio risk assessment using differential equations.</p>
+          </div>
+          <div class="app-card app-card-4">
+            <span class="app-number">04</span>
+            <h4>Medical Research</h4>
+            <p>Modeling disease spread, drug concentration over time, and biological system dynamics.</p>
+          </div>
+          <div class="app-card app-card-5">
+            <span class="app-number">05</span>
+            <h4>Climate & Environment</h4>
+            <p>Predicting climate patterns, pollution dispersion, and environmental system behavior.</p>
+          </div>
+          <div class="app-card app-card-6">
+            <span class="app-number">06</span>
+            <h4>Control Systems</h4>
+            <p>Designing automated control systems for manufacturing, robotics, and industrial automation.</p>
           </div>
         </div>
       </div>
@@ -111,17 +123,28 @@
       </div>
       <div class="contact-grid">
         <div class="contact-card">
-          <p class="contact-label">WhatsApp</p>
-          <a href="https://wa.me/923066127129" target="_blank">0306 6127129</a>
+          <p class="contact-label">WhatsApp / Call</p>
+          <a href="tel:03066127129" class="phone-link">📞 0306 6127129</a>
         </div>
-        <div class="contact-card">
+        <div class="contact-card email-card">
           <p class="contact-label">Email</p>
-          <a href="mailto:adnanshafi0306@gmail.com">adnan.shafi@gmail.com</a>
+          <a href="mailto:adnanshafi0306@gmail.com" class="email-link">adnanshafi0306@gmail.com</a>
         </div>
         <div class="contact-card">
           <p class="contact-label">LinkedIn</p>
           <a href="https://www.linkedin.com/in/adnan-shafi" target="_blank">linkedin.com/in/adnan-shafi</a>
         </div>
+      </div>
+
+      <div class="feedback-section">
+        <h3>Send Your Feedback</h3>
+        <form onsubmit="handleSubmit(event)" class="feedback-form">
+          <input type="text" placeholder="Your Name" required />
+          <input type="email" placeholder="Your Email" required />
+          <textarea placeholder="Your Message or Feedback" rows="4" required></textarea>
+          <button type="submit" class="submit-btn">Send Message</button>
+        </form>
+        <div id="feedback-message" class="feedback-message"></div>
       </div>
     </section>
   </main>
@@ -129,5 +152,23 @@
   <footer class="site-footer">
     <p>Designed for Muhammad Adnan Shafi | BZU Mathematics Student</p>
   </footer>
+
+  <script>
+    function handleSubmit(event) {
+      event.preventDefault();
+      const form = event.target;
+      const name = form.querySelector('input[type="text"]').value;
+      const email = form.querySelector('input[type="email"]').value;
+      
+      const message = document.getElementById('feedback-message');
+      message.textContent = `Thank you ${name}! Your feedback has been received. We'll be in touch at ${email}`;
+      message.style.display = 'block';
+      
+      form.reset();
+      setTimeout(() => {
+        message.style.display = 'none';
+      }, 5000);
+    }
+  </script>
 </body>
 </html>
